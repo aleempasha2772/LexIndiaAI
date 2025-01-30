@@ -44,10 +44,12 @@ public class DataLoader {
             PagePdfDocumentReader reader = new PagePdfDocumentReader(pdfResouce, config);
 
             var textSplitter = new TokenTextSplitter();
+            /*
+            making vectorised the data
+             */
             vectorStore.accept(textSplitter.apply(reader.get()));
+
             System.out.println("Application is ready to Serve the Requests");
-
-
         }
     }
 
